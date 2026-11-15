@@ -164,7 +164,7 @@
   </div>
 </section>
 
-<section class="sec tight lazy-sec">
+<section class="sec tight">
   <div class="wrap write">
     <div class="write-paper paper rv" id="hwPaper">
       <span class="margin"></span>
@@ -200,7 +200,7 @@
   </div>
 </section>
 
-<section class="sec tight lazy-sec" id="tinh-nang">
+<section class="sec tight" id="tinh-nang">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="kicker">Và còn nữa</div>
@@ -244,7 +244,7 @@
   </div>
 </section>
 
-<section class="sec tight lazy-sec">
+<section class="sec tight">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="kicker">Ảnh chụp</div>
@@ -260,7 +260,7 @@
   </div>
 </section>
 
-<section class="sec lazy-sec" id="tai-ve">
+<section class="sec" id="tai-ve">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="kicker">Tải về</div>
@@ -291,20 +291,29 @@
       </article>
     </div>
     <p class="note-mac">Mac chip gì? Bấm quả táo → <b>Giới thiệu về máy Mac này</b>: “Apple M…” là chip Apple, “Intel” là chip Intel.</p>
-    <div class="steps">
-      <div class="step rv"><h4>Mở tệp vừa tải</h4><p>Windows hiện “Windows đã bảo vệ máy tính”: bấm <b>Thông tin thêm</b> → <b>Vẫn chạy</b>. Mac: kéo GlassBox Ink vào Ứng dụng.</p></div>
-      <div class="step rv" style="--d:.06s"><h4>Mở app lần đầu</h4><p>Mac chặn thì vào <b>Cài đặt hệ thống → Quyền riêng tư &amp; Bảo mật</b> → <b>Vẫn mở</b>.</p></div>
-      <div class="step rv" style="--d:.12s"><h4>Dùng thử, rồi kích hoạt</h4><p>7 ngày không cần mạng. Có mã thì nhập ở <b>Cài đặt → Giới thiệu</b>.</p></div>
-    </div>
+    <p class="dl-hint rv">Bấm tải là có ngay hướng dẫn cài từng bước, kèm ảnh.</p>
   </div>
 </section>
 
-<section class="sec tight lazy-sec" id="bang-gia">
+<section class="sec tight" id="bang-gia">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="kicker">Bảng giá</div>
       <h2 data-split>Dùng thử trước, ưng rồi mới mua</h2>
       <p>Mọi gói đều đủ tính năng, mỗi mã dùng cho một máy.</p>
+    </div>
+    <div class="sale rv" id="sale" aria-live="polite">
+      <div class="sale-l">
+        <span class="sale-tag">Ưu đãi ra mắt</span>
+        <p class="sale-t">Giảm đến <b>22%</b> mọi gói, kết thúc <b>15/12/2026</b></p>
+      </div>
+      <div class="cd" role="timer" aria-label="Thời gian ưu đãi còn lại">
+        <div class="cd-u"><span class="cd-n" data-cd="d">30</span><small>ngày</small></div>
+        <div class="cd-u"><span class="cd-n" data-cd="h">00</span><small>giờ</small></div>
+        <div class="cd-u"><span class="cd-n" data-cd="m">00</span><small>phút</small></div>
+        <div class="cd-u"><span class="cd-n" data-cd="s">00</span><small>giây</small></div>
+      </div>
+      <div class="sale-bar" aria-hidden="true"><b id="saleBar"></b></div>
     </div>
     <div class="plans">
       <article class="plan rv tilt glow">
@@ -342,7 +351,7 @@
   </div>
 </section>
 
-<section class="sec lazy-sec" id="ho-tro">
+<section class="sec" id="ho-tro">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="kicker">Mua và hỗ trợ</div>
@@ -376,7 +385,7 @@
   </div>
 </section>
 
-<section class="sec tight lazy-sec" id="hoi-dap">
+<section class="sec tight" id="hoi-dap">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="kicker">Hỏi đáp</div>
@@ -392,7 +401,7 @@
   </div>
 </section>
 
-<section class="sec tight lazy-sec">
+<section class="sec tight">
   <div class="wrap">
     <div class="final paper rv" id="final">
       <svg class="logo" viewBox="0 0 48 48" style="width:64px;height:64px;margin:0 auto 18px" aria-hidden="true"><rect width="48" height="48" rx="12"/><path d="M11 30.5c2.2-9 4.6-14 6.6-11.2 1.7 2.4-.2 11.6 2.6 10.3 2.4-1.1 3.2-6.7 5.6-5.2 2 1.3 1.6 4.6 4 3.6 1.7-.7 2.7-2.6 4.6-3.2 1-.3 1.8.1 2.6.6"/></svg>
@@ -404,6 +413,43 @@
 </section>
 </main>
 
+
+<!-- Claude: màn hình tải riêng cho từng loại máy, mở khi bấm nút tải -->
+<div class="dlp" id="dlp" role="dialog" aria-modal="true" aria-labelledby="dlpTitle" hidden>
+  <div class="dlp-top">
+    <button class="dlp-back" type="button" data-dlp-close><svg><use href="#i-arrow"/></svg>Quay lại</button>
+    <span class="brand"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12"/><path d="M11 30.5c2.2-9 4.6-14 6.6-11.2 1.7 2.4-.2 11.6 2.6 10.3 2.4-1.1 3.2-6.7 5.6-5.2 2 1.3 1.6 4.6 4 3.6 1.7-.7 2.7-2.6 4.6-3.2 1-.3 1.8.1 2.6.6"/></svg>GlassBox Ink</span>
+  </div>
+  <div class="dlp-scroll">
+    <div class="dlp-wrap">
+      <header class="dlp-head">
+        <div class="dlp-os"><svg><use href="#i-win"/></svg></div>
+        <div class="dlp-h">
+          <p class="dlp-k"><span class="dlp-spin"></span><span data-dlp-state>Đang tải xuống</span></p>
+          <h2 id="dlpTitle">GlassBox Ink cho Windows</h2>
+          <p class="dlp-sub">Tệp sẽ tự tải trong giây lát. Chưa thấy? <a href="#" data-dlp-again>Bấm vào đây để tải lại</a></p>
+        </div>
+      </header>
+      <aside class="dlp-note">
+        <span class="dlp-note-i">!</span>
+        <p data-dlp-note></p>
+      </aside>
+      <ol class="dlp-steps" data-dlp-steps></ol>
+      <div class="dlp-done">
+        <div>
+          <h3>Xong rồi! Mở GlassBox Ink và dùng thử 7 ngày</h3>
+          <p>Có mã kích hoạt thì nhập ở <b>Cài đặt → Giới thiệu</b>. Cần giúp thì nhắn nhóm Zalo.</p>
+        </div>
+        <div class="dlp-done-a">
+          <a class="btn" href="#bang-gia" data-dlp-close>Xem bảng giá</a>
+          <a class="btn ghost" href="https://zalo.me/g/bov0yustx6fiwfgeb471" target="_blank" rel="noopener">Nhóm Zalo hỗ trợ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="zoom" id="zoom" hidden><img alt=""></div>
+
 <footer>
   <div class="wrap">
     <a class="brand" href="#top"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12"/><path d="M11 30.5c2.2-9 4.6-14 6.6-11.2 1.7 2.4-.2 11.6 2.6 10.3 2.4-1.1 3.2-6.7 5.6-5.2 2 1.3 1.6 4.6 4 3.6 1.7-.7 2.7-2.6 4.6-3.2 1-.3 1.8.1 2.6.6"/></svg>GlassBox Ink</a>
@@ -414,5 +460,6 @@
 
 <script src="js/intro.js" defer></script>
 <script src="js/site.js" defer></script>
+<script src="js/download.js" defer></script>
 </body>
 </html>
