@@ -10,7 +10,7 @@
   const macSteps = [
     { h: 'Kéo GlassBox Ink vào Applications', p: 'Mở tệp <b>.dmg</b> vừa tải, kéo biểu tượng GlassBox Ink thả vào thư mục <b>Applications</b>.', img: 'mac-1-keo-vao.png' },
     { h: 'Mở app, macOS báo chặn: bấm Done', p: 'Lần đầu mở, macOS hiện “GlassBox Ink” Not Opened. Bấm <b>Done</b> (Xong), đừng bấm Move to Trash.', img: 'mac-2-xong.png', narrow: true },
-    { h: 'Vào Privacy & Security, bấm Open Anyway', p: 'Mở <b>System Settings → Privacy &amp; Security</b>, kéo xuống mục Security, bấm <b>Open Anyway</b> (Vẫn mở) cạnh dòng “GlassBox Ink” was blocked.', img: 'mac-3-van-mo.png' },
+    { h: 'Vào Privacy & Security, bấm Open Anyway', p: 'Mở <b>System Settings → Privacy &amp; Security</b>, kéo xuống mục Security, bấm <b>Open Anyway</b> (Vẫn mở) cạnh dòng “GlassBox Ink” was blocked.', img: 'mac-3-van-mo.png', mid: true },
     { h: 'Xác nhận Open Anyway', p: 'Bấm <b>Open Anyway</b> lần nữa (có thể máy hỏi mật khẩu). Xong, GlassBox Ink mở ra.', img: 'mac-4-xac-nhan.png', narrow: true },
   ];
   const GUIDE = {
@@ -41,7 +41,7 @@
     stepsEl.innerHTML = g.steps.map((s, i) => `
       <li style="--i:${i}"><div class="dlp-card">
         <h3>${s.h}</h3><p>${s.p}</p>
-        ${s.img ? `<figure><img src="${IMG + s.img}" alt="${s.h.replace(/"/g, '')}" loading="lazy" class="${s.narrow ? 'narrow' : ''}"></figure>` : ''}
+        ${s.img ? `<figure><img src="${IMG + s.img}" alt="${s.h.replace(/"/g, '')}" loading="lazy" class="${s.narrow ? 'narrow' : s.mid ? 'mid' : ''}"></figure>` : ''}
       </div></li>`).join('');
     // ảnh chưa có thì hiện khung ghi chú thay vì ảnh vỡ
     $$('img', stepsEl).forEach(img => img.addEventListener('error', () => {
