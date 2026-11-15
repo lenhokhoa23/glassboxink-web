@@ -102,7 +102,8 @@
     page.hidden = false;
     document.documentElement.classList.add('dlp-lock');
     $('.dlp-scroll', page).scrollTop = 0;
-    requestAnimationFrame(() => requestAnimationFrame(() => page.classList.add('open')));
+    void page.offsetWidth;            // ép trình duyệt dựng vị trí đầu rồi mới trượt lên
+    page.classList.add('open');
     if (push) history.pushState({ dlp: os }, '', GUIDE[os].hash || '#tai-' + os);
     if (download) setTimeout(startDownload, reduce ? 0 : 650);
     setTimeout(() => $('.dlp-back', page).focus({ preventScroll: true }), 600);
@@ -150,6 +151,7 @@
     if (z && !z.hidden) { z.hidden = true; return; }
     close();
   });
+  addEventListener('hashchange', () => { const os = hashOs(); if (os && page.hidden) open(os, { download: false, push: false }); });
   addEventListener('popstate', () => {
     const os = hashOs();
     if (os) open(os, { download: false, push: false }); else close({ pop: true });
