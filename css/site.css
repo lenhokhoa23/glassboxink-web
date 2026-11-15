@@ -389,3 +389,13 @@ html.dlp-lock, html.dlp-lock body { overflow: hidden; }
 .zoom img { max-width: 94vw; max-height: 90vh; border-radius: 12px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.6); background: #fff; }
 @keyframes fadeIn { from { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .dlp { transition: none; } .dlp-steps li { opacity: 1; transform: none; } }
+
+/* Claude: màn hướng dẫn Gemini (15/11/2026) */
+.dlp.guide .dlp-spin { display: none; }
+.dlp-steps li.part { display: block; counter-increment: none; margin: 8px 0 -4px; }
+.dlp-steps li.part::before, .dlp-steps li.part::after { display: none; }
+.dlp-steps li.part span { display: inline-block; padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 900; font-size: 14px; letter-spacing: .01em; }
+.dlp-card .tip { margin-top: 10px; padding: 10px 12px; border-radius: 12px; background: #EEF7F0; color: #24553A; font-size: 15px; }
+.dlp-card a, .dlp-done a:not(.btn) { color: var(--accent); font-weight: 800; }
+.ans-link { display: inline-block; margin-top: 6px; color: var(--accent); font-weight: 800; text-decoration: none; }
+.ans-link:hover { text-decoration: underline; }
