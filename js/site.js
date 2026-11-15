@@ -37,96 +37,14 @@
     playHero();
   }
 
-  /* ---------- Màn mở đầu: ngòi bút quét mực cầu vồng phủ màn rồi mở ra ---------- */
+  /* ---------- Màn mở đầu (js/intro.js) ---------- */
   const intro = $('#intro');
-  if (root.classList.contains('no-intro') || !intro) {
+  if (root.classList.contains('no-intro') || !intro || !window.GBIntro) {
     intro?.remove();
     requestAnimationFrame(start);
   } else {
     try { sessionStorage.setItem('gb-intro', '1'); } catch (e) {}
-    const cv = $('#introCanvas'), ctx = cv.getContext('2d');
-    const dpr = Math.min(1.5, devicePixelRatio || 1);
-    const W = innerWidth, H = innerHeight;
-    cv.width = W * dpr; cv.height = H * dpr; ctx.scale(dpr, dpr);
-    const BW = Math.max(W, H) * .36;                 // bề rộng vệt mực
-    const slope = -.32;                               // vệt chéo đi lên
-    const rows = Math.ceil((H + Math.abs(slope) * W + BW) / (BW * .78)) + 1;
-    const pts = [];
-    for (let r = 0; r < rows; r++) {
-      const y = -BW * .4 + r * BW * .78;
-      const L = [-BW * .6, y + BW * .3], R = [W + BW * .6, y + slope * W + BW * .3];
-      if (r % 2) pts.push(R, L); else pts.push(L, R);
-    }
-    const seg = [];
-    let total = 0;
-    for (let k = 1; k < pts.length; k++) {
-      const d = Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][1] - pts[k - 1][1]);
-      seg.push(d); total += d;
-    }
-    const grad = ctx.createLinearGradient(0, H, W, 0);
-    [['#5B3FC4', 0], ['#7a4cf0', .3], ['#c04ad0', .55], ['#e5487d', .75], ['#ff8a00', 1]].forEach(([c, o]) => grad.addColorStop(o, c));
-    const ease = x => 1 - Math.pow(1 - x, 3);
-    function pathTo(len, off) {
-      ctx.beginPath();
-      ctx.moveTo(pts[0][0], pts[0][1] + off);
-      let acc = 0, head = pts[0], dir = [1, 0];
-      for (let k = 1; k < pts.length; k++) {
-        const a = pts[k - 1], b = pts[k], d = seg[k - 1];
-        dir = [(b[0] - a[0]) / d, (b[1] - a[1]) / d];
-        if (acc + d >= len) {
-          const f = (len - acc) / d;
-          head = [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
-          ctx.lineTo(head[0], head[1] + off);
-          return { head, dir };
-        }
-        ctx.lineTo(b[0], b[1] + off); acc += d; head = b;
-      }
-      return { head, dir };
-    }
-    function nib(h, d) {
-      // ngòi bút máy đơn giản: thân tím đậm, ngòi vàng, đi theo hướng vệt
-      ctx.save();
-      ctx.translate(h[0], h[1]);
-      ctx.rotate(Math.atan2(d[1], d[0]) + Math.PI * .82);
-      const s = Math.min(W, H) * .11;
-      ctx.fillStyle = '#F5C400';
-      ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(s * .22, -s * .55); ctx.lineTo(-s * .22, -s * .55); ctx.closePath(); ctx.fill();
-      ctx.fillStyle = '#1F1C26';
-      ctx.beginPath(); ctx.roundRect ? ctx.roundRect(-s * .2, -s * 1.9, s * .4, s * 1.38, s * .14) : ctx.rect(-s * .2, -s * 1.9, s * .4, s * 1.38); ctx.fill();
-      ctx.strokeStyle = 'rgba(255,255,255,.5)'; ctx.lineWidth = 1.5;
-      ctx.beginPath(); ctx.moveTo(0, -s * .1); ctx.lineTo(0, -s * .48); ctx.stroke();
-      ctx.restore();
-    }
-    const T_PAINT = 780, T_MARK = 700, T_OUT = 1150;
-    let t0 = null, done = false;
-    function frame(ts) {
-      if (done) return;
-      if (t0 === null) t0 = ts;
-      const el = ts - t0;
-      const p = ease(Math.min(1, el / T_PAINT));
-      ctx.fillStyle = '#F7F6F2'; ctx.fillRect(0, 0, W, H);
-      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-      ctx.strokeStyle = grad; ctx.lineWidth = BW;
-      const { head, dir } = pathTo(total * p, 0); ctx.stroke();
-      // sợi lông cọ: vệt sáng mảnh chạy dọc
-      ctx.strokeStyle = 'rgba(255,255,255,.16)'; ctx.lineWidth = BW * .07;
-      pathTo(total * p, -BW * .28); ctx.stroke();
-      pathTo(total * p, BW * .22); ctx.stroke();
-      if (p < 1) nib(head, dir);
-      if (el > T_MARK) intro.classList.add('show-mark');
-      if (el > T_OUT) { finish(); return; }
-      requestAnimationFrame(frame);
-    }
-    function finish() {
-      if (done) return;
-      done = true;
-      intro.classList.add('show-mark', 'out');
-      start();
-      setTimeout(() => intro.remove(), 650);
-    }
-    intro.addEventListener('click', finish);
-    addEventListener('keydown', finish, { once: true });
-    requestAnimationFrame(frame);
+    window.GBIntro(start);
   }
 
   /* ---------- Menu điện thoại, thanh trên, tiến độ cuộn ---------- */
