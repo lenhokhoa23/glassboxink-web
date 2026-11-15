@@ -1,0 +1,420 @@
+<!doctype html>
+<!-- Claude: trang giới thiệu GlassBox Ink, bản 2 (15/11/2026). Video và ảnh trong media/ là khung hình thật của app. -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GlassBox Ink · Sổ tay giảng Toán</title>
+<meta name="description" content="GlassBox Ink: sổ tay cho thầy cô giảng Toán và các bạn học Toán, chạy trên Windows và macOS. Viết tay mượt, đồ thị, bảng biến thiên, hình 3D, Oxyz, quét đề bằng AI. Dùng thử 7 ngày.">
+<meta name="theme-color" content="#5B3FC4">
+<meta property="og:title" content="GlassBox Ink · Sổ tay giảng Toán">
+<meta property="og:description" content="Viết tay như trên giấy. Vẽ hình chuẩn như máy.">
+<meta property="og:image" content="media/video/hero.jpg">
+<link rel="icon" href="media/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;600;700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script>
+  // Claude: màn mở đầu chỉ chạy lần đầu vào trong phiên, và không chạy khi máy bật giảm chuyển động.
+  try {
+    if (sessionStorage.getItem('gb-intro') || matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('no-intro');
+  } catch (e) {}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="rainbow" x1="0" x2="1">
+      <stop offset="0" stop-color="#5B3FC4"/><stop offset=".25" stop-color="#9b4dff"/>
+      <stop offset=".5" stop-color="#e5487d"/><stop offset=".75" stop-color="#ff8a00"/><stop offset="1" stop-color="#f5c400"/>
+    </linearGradient>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13m-5-5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M7 12h10"/></g></symbol>
+    <symbol id="i-graph" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16"/><path d="M6 17c3-9 5-9 7-4s4 5 6-6"/></g></symbol>
+    <symbol id="i-table" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8.5 4.5v15M11 16l3-3 3 3"/></g></symbol>
+    <symbol id="i-cube" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></g></symbol>
+    <symbol id="i-axes" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 13V3M12 13l-8 6M12 13l9 3"/><path d="M6 9c2 3 10 3 12 0"/></g></symbol>
+    <symbol id="i-ruler" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3L3 19h18z"/><path d="M12 3v16M8 12l4 2"/></g></symbol>
+    <symbol id="i-fan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="2.2"/><path d="M12 3.5v3M19.4 7.7l-2.6 1.5M19.4 16.3l-2.6-1.5M12 20.5v-3M4.6 16.3l2.6-1.5M4.6 7.7l2.6 1.5"/></g></symbol>
+    <symbol id="i-split" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M9 3l-6 13h7zM15 8l6 13h-9z"/></g></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 4.5l4 4L9 19l-5 1 1-5z"/><path d="M13.5 6.5l4 4"/></g></symbol>
+    <symbol id="i-pdf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></g></symbol>
+    <symbol id="i-grade" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.3l2.8 2.8L16.5 9.5"/></g></symbol>
+    <symbol id="i-tray" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="14" width="18" height="6" rx="3"/><path d="M7 17h.01M11 17h.01M15 17h.01M12 4v6m-3-3l3 3 3-3"/></g></symbol>
+    <symbol id="i-update" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.4-5.7M20 4v4.5h-4.5"/></g></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></g></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-win" viewBox="0 0 24 24"><path d="M3 5.3l7.4-1v7.2H3zM11.4 4.1L21 2.8v8.7h-9.6zM3 12.5h7.4v7.2l-7.4-1zM11.4 12.5H21v8.7l-9.6-1.3z" fill="currentColor"/></symbol>
+    <symbol id="i-mac" viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.9-3.1-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.4-1-2.4-3.8zM14.1 5.8c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.7-1.3z" fill="currentColor"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 20c.6-3.6 3.3-5.5 6.5-5.5s5.9 1.9 6.5 5.5M16 5.2a3.3 3.3 0 0 1 0 6.6M17.5 14.7c2.2.6 3.6 2.4 4 5.3"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></g></symbol>
+  </defs>
+</svg>
+
+<!-- Màn mở đầu -->
+<div class="intro" id="intro" aria-hidden="true">
+  <canvas id="introCanvas"></canvas>
+  <div class="mark"><div><svg class="logo" viewBox="0 0 48 48"><rect width="48" height="48" rx="12"/><path d="M11 30.5c2.2-9 4.6-14 6.6-11.2 1.7 2.4-.2 11.6 2.6 10.3 2.4-1.1 3.2-6.7 5.6-5.2 2 1.3 1.6 4.6 4 3.6 1.7-.7 2.7-2.6 4.6-3.2 1-.3 1.8.1 2.6.6"/></svg>GlassBox Ink</div></div>
+</div>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="nav" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="GlassBox Ink">
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12"/><path d="M11 30.5c2.2-9 4.6-14 6.6-11.2 1.7 2.4-.2 11.6 2.6 10.3 2.4-1.1 3.2-6.7 5.6-5.2 2 1.3 1.6 4.6 4 3.6 1.7-.7 2.7-2.6 4.6-3.2 1-.3 1.8.1 2.6.6"/></svg>
+      GlassBox Ink
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Mục chính">
+      <a href="#xem-app">Tính năng</a>
+      <a href="#tai-ve">Tải về</a>
+      <a href="#bang-gia">Bảng giá</a>
+      <a href="#hoi-dap">Hỏi đáp</a>
+      <a href="#ho-tro">Hỗ trợ</a>
+    </nav>
+    <a class="btn btn-sm" href="#tai-ve">Tải miễn phí</a>
+    <button class="icon-btn" id="menuBtn" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="navLinks"><svg><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="hero">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="glow-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="chip rv-h"><b>Mới <span data-ver>0.1.4</span></b>Sổ tay cho thầy cô giảng Toán và các bạn học Toán</span>
+      <h1 data-split>Viết tay như trên giấy.
+        <span class="line2"><span class="grad-text">Vẽ hình</span> <span class="hand-word">chuẩn như máy.<svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 20c40-12 80-14 120-8s90 8 172-6"/></svg></span></span>
+      </h1>
+      <p class="lead rv-h" style="--d:.35s">Nét bút mượt có lực nhấn. Đồ thị, bảng biến thiên, hình không gian, Oxyz dựng trong vài giây. Chụp đề vào là AI dựng lại cả chữ lẫn hình.</p>
+      <div class="cta rv-h" style="--d:.45s">
+        <a class="btn" href="#tai-ve" data-dl-primary><svg><use href="#i-down"/></svg><span>Tải cho <span data-os-name>Windows</span><small>Dùng thử 7 ngày, miễn phí</small></span></a>
+        <a class="btn ghost" href="#xem-app"><svg><use href="#i-play"/></svg>Xem app chạy</a>
+      </div>
+      <div class="trust rv-h" style="--d:.55s">
+        <span><svg><use href="#i-check"/></svg>Dùng thử không cần mạng</span>
+        <span><svg><use href="#i-check"/></svg>Bài nằm trên máy</span>
+        <span><svg><use href="#i-check"/></svg>Cập nhật một nút bấm</span>
+      </div>
+    </div>
+    <div class="hero-stage rv-h" style="--d:.6s">
+      <div class="float-chip fc1"><i><svg><use href="#i-pen"/></svg></i>Mực cầu vồng</div>
+      <div class="float-chip fc2"><i><svg><use href="#i-split"/></svg></i>Tách khối theo thiết diện</div>
+      <div class="float-chip fc3"><i><svg><use href="#i-cube"/></svg></i>Vật thể tròn xoay</div>
+      <div class="window" id="heroWin">
+        <video src="media/video/hero.mp4" poster="media/video/hero.jpg" muted loop playsinline preload="none" data-auto aria-label="GlassBox Ink: chữ mực cầu vồng, vật thể tròn xoay, tách hình chóp theo thiết diện"></video>
+      </div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Hàm bậc ba</span><span>Bảng biến thiên</span><span>Hình chóp S.ABCD</span><span>Thiết diện</span><span>Trải hình</span><span>Mặt cong Oxyz</span><span>Vật thể tròn xoay</span><span>Khoảng cách</span><span>Chấm điểm</span><span>Chèn PDF</span><span>Quét đề</span>
+      <span>Hàm bậc ba</span><span>Bảng biến thiên</span><span>Hình chóp S.ABCD</span><span>Thiết diện</span><span>Trải hình</span><span>Mặt cong Oxyz</span><span>Vật thể tròn xoay</span><span>Khoảng cách</span><span>Chấm điểm</span><span>Chèn PDF</span><span>Quét đề</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="xem-app">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Xem tận mắt</div>
+      <h2 data-split>Việc mất cả buổi, giờ còn vài giây</h2>
+    </div>
+    <div class="show">
+      <div class="tabs" role="tablist" aria-label="Tính năng">
+        <button class="tab" role="tab" aria-selected="true" data-video="quet-de">
+          <h3><i><svg><use href="#i-scan"/></svg></i>Quét đề bằng AI</h3>
+          <p>Dán ảnh đề, khoanh vùng. App đọc đề, gõ lại câu có công thức và dựng hình để sửa tiếp.</p><span class="bar"><b></b></span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-video="khoi-3d">
+          <h3><i><svg><use href="#i-cube"/></svg></i>Hình không gian</h3>
+          <p>Xoay, tô màu mặt, dựng từng bước, trải hình, tách khối theo thiết diện.</p><span class="bar"><b></b></span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-video="oxyz">
+          <h3><i><svg><use href="#i-axes"/></svg></i>Oxyz và mặt cong</h3>
+          <p>Mỗi dòng một lệnh: gõ z = x² + y² là mặt cong hiện ra, kéo để xoay.</p><span class="bar"><b></b></span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-video="khoang-cach">
+          <h3><i><svg><use href="#i-ruler"/></svg></i>Xưởng hình không gian</h3>
+          <p>Đủ công cụ dựng hình: đoạn vuông góc chung, khoảng cách, góc.</p><span class="bar"><b></b></span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-video="do-thi">
+          <h3><i><svg><use href="#i-graph"/></svg></i>Đồ thị hàm số</h3>
+          <p>Gõ hàm là có đồ thị. Một nút bấm để hiện cực trị, nghiệm, điểm uốn.</p><span class="bar"><b></b></span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-video="bang-bien-thien">
+          <h3><i><svg><use href="#i-table"/></svg></i>Bảng biến thiên</h3>
+          <p>Từ biểu thức ra bảng đủ dấu, mũi tên, giá trị. Sửa tay từng ô được.</p><span class="bar"><b></b></span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-video="hero">
+          <h3><i><svg><use href="#i-split"/></svg></i>Tròn xoay, thiết diện</h3>
+          <p>Quay parabol thành vật thể tròn xoay; cắt chóp theo thiết diện rồi kéo các khối rời nhau.</p><span class="bar"><b></b></span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-video="quat">
+          <h3><i><svg><use href="#i-fan"/></svg></i>Quạt gợi ý</h3>
+          <p>Chọn hình, bấm chuột phải hoặc giữ ngón: việc làm tiếp xòe ra quanh hình.</p><span class="bar"><b></b></span>
+        </button>
+      </div>
+      <div class="show-stage">
+        <div class="window"><video id="showVideo" muted playsinline preload="none" poster="media/video/quet-de.jpg" aria-label="Video tính năng đang chọn"></video></div>
+        <p class="tab-desc" id="tabDesc"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight lazy-sec">
+  <div class="wrap write">
+    <div class="write-paper paper rv" id="hwPaper">
+      <span class="margin"></span>
+      <svg class="hw" id="hw" viewBox="0 0 640 496" role="img" aria-label="Chữ viết tay: Xin chào thầy cô, GlassBox Ink, y bằng x mũ ba trừ ba x">
+        <defs>
+          <clipPath id="c1"><rect x="0" y="0" width="0" height="496"/></clipPath>
+          <clipPath id="c2"><rect x="0" y="0" width="0" height="496"/></clipPath>
+          <clipPath id="c3"><rect x="0" y="0" width="0" height="496"/></clipPath>
+          <clipPath id="c4"><rect x="0" y="0" width="0" height="496"/></clipPath>
+        </defs>
+        <rect id="hl" x="112" y="318" width="0" height="40" rx="12" fill="#FFD43B" opacity=".42"/>
+        <g clip-path="url(#c1)"><text id="t1" x="108" y="122" font-size="58" fill="#5B3FC4">Xin chào thầy cô,</text></g>
+        <g clip-path="url(#c2)"><text id="t2" x="108" y="232" font-size="84" fill="url(#rainbow)">GlassBox Ink</text></g>
+        <g clip-path="url(#c3)"><text id="t3" x="112" y="352" font-size="60" fill="#0A4DFF">y = x³ − 3x</text></g>
+        <g clip-path="url(#c4)"><path id="t4" d="M112 400c60-14 120-16 180-8s120 10 200-10" fill="none" stroke="#EB1C26" stroke-width="4.5" stroke-linecap="round"/></g>
+        <circle id="nib" r="5" fill="#1F1C26" opacity="0"/>
+      </svg>
+    </div>
+    <div class="rv" style="--d:.1s">
+      <div class="kicker">Nét bút</div>
+      <h2 data-split>Viết như trên giấy, giảng như trên bảng</h2>
+      <p class="big">Sáu loại bút, đậm nhạt theo lực nhấn của bút cảm ứng, có cả mực cầu vồng. Giấy kẻ ô, kẻ ngang, chấm hay ô 5 mm.</p>
+      <div class="pens">
+        <span class="pen-chip"><span class="sw" style="background:#14131A"></span>Bút bi</span>
+        <span class="pen-chip"><span class="sw" style="background:#5B3FC4"></span>Bút máy</span>
+        <span class="pen-chip"><span class="sw" style="background:#7A4B2A"></span>Bút chì</span>
+        <span class="pen-chip"><span class="sw" style="background:#0E8F9A"></span>Bút lông</span>
+        <span class="pen-chip"><span class="sw" style="background:#FFD43B"></span>Dạ quang</span>
+        <span class="pen-chip"><span class="sw" style="background:conic-gradient(#5B3FC4,#e5487d,#ff8a00,#f5c400,#08A045,#0A4DFF,#5B3FC4)"></span>Mực cầu vồng</span>
+      </div>
+      <img class="tray-img" src="media/anh/khay.jpg" alt="Khay bút của GlassBox Ink" loading="lazy" width="740" height="96">
+    </div>
+  </div>
+</section>
+
+<section class="sec tight lazy-sec" id="tinh-nang">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Và còn nữa</div>
+      <h2 data-split>Đủ đồ nghề cho một tiết Toán</h2>
+    </div>
+    <div class="bento">
+      <article class="card wide rv tilt glow">
+        <div class="ic"><svg><use href="#i-pdf"/></svg></div>
+        <h3>Chèn PDF, ảnh, chèn khoảng trống</h3>
+        <p>Mở đề PDF ngay trong sổ, chèn khoảng trống giữa hai đoạn để có chỗ giải. Khoanh một vùng là chép ra, dán sang Zalo hay Word.</p>
+        <div class="mini" aria-hidden="true">
+          <svg viewBox="0 0 560 150" preserveAspectRatio="xMidYMid meet" id="pdfAnim">
+            <g><rect class="pdf-page" x="150" y="14" width="260" height="62" rx="6"/><path class="pdf-line" d="M174 36h160M174 54h200"/></g>
+            <rect id="pdfGap" x="150" y="76" width="260" height="0" fill="#FDFCF7"/>
+            <g id="pdfBot"><rect class="pdf-page" x="150" y="76" width="260" height="62" rx="6"/><path class="pdf-line" d="M174 98h190M174 116h120"/></g>
+          </svg>
+        </div>
+      </article>
+      <article class="card wide rv tilt glow" style="--d:.08s">
+        <div class="ic"><svg><use href="#i-grade"/></svg></div>
+        <h3>Chấm bài ngay trên trang</h3>
+        <p>Đúng, sai, điểm 0 đến 10, lời khen, lời nhắc, chữ ký. Bấm là đặt, đặt liên tiếp.</p>
+        <div class="media"><img src="media/anh/cham-diem.jpg" alt="Bảng Chấm bài, tab Điểm" loading="lazy" width="359" height="500"></div>
+      </article>
+      <article class="card rv tilt glow">
+        <div class="ic"><svg><use href="#i-tray"/></svg></div>
+        <h3>Khay công cụ tự chọn</h3>
+        <p>Đưa công cụ hay dùng ra khay dưới trang, không phải lục menu.</p>
+      </article>
+      <article class="card rv tilt glow" style="--d:.06s">
+        <div class="ic"><svg><use href="#i-update"/></svg></div>
+        <h3>Cập nhật một nút bấm</h3>
+        <p>Có bản mới, app nhắc khi mở. Bấm Cập nhật ngay là xong.</p>
+      </article>
+      <article class="card rv tilt glow" style="--d:.12s">
+        <div class="ic"><svg><use href="#i-lock"/></svg></div>
+        <h3>Bài nằm trên máy</h3>
+        <p>Sổ lưu trên máy tính. Cài lại, cập nhật không mất bài.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight lazy-sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Ảnh chụp</div>
+      <h2 data-split>Gọn gàng, dễ nhìn</h2>
+    </div>
+    <div class="gallery" id="gallery">
+      <figure class="shot"><div class="window"><img src="media/anh/05_do_thi_light.jpg" alt="Xưởng Đồ thị" loading="lazy" width="1366" height="768"></div><figcaption>Xưởng Đồ thị</figcaption></figure>
+      <figure class="shot"><div class="window"><img src="media/anh/06_bang_bien_thien_light.jpg" alt="Bảng biến thiên" loading="lazy" width="1366" height="768"></div><figcaption>Bảng biến thiên</figcaption></figure>
+      <figure class="shot"><div class="window"><img src="media/anh/04_dung_hinh_chop_light.jpg" alt="Dựng hình không gian" loading="lazy" width="1366" height="768"></div><figcaption>Dựng hình không gian</figcaption></figure>
+      <figure class="shot"><div class="window"><img src="media/anh/02_quan_sat_light.jpg" alt="Quan sát và tô mặt khối" loading="lazy" width="1366" height="768"></div><figcaption>Quan sát, tô mặt khối</figcaption></figure>
+      <figure class="shot"><div class="window"><img src="media/anh/08_cong_thuc_light.jpg" alt="Soạn công thức" loading="lazy" width="1366" height="768"></div><figcaption>Công thức Toán</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec lazy-sec" id="tai-ve">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Tải về</div>
+      <h2 data-split>Cài trong một phút, dùng thử 7 ngày</h2>
+      <p>Bản mới nhất: <b data-ver>0.1.4</b></p>
+    </div>
+    <div class="dl">
+      <article class="dl-card rv tilt glow" data-os="win">
+        <div class="os"><svg><use href="#i-win"/></svg></div>
+        <h3>Windows</h3>
+        <p class="req">Windows 10, Windows 11 (64-bit).</p>
+        <a class="btn" data-asset="win-x64" href="https://github.com/lenhokhoa23/net-phat-hanh/releases/download/v0.1.4/GlassBox-Ink-0.1.4-win-x64.exe"><svg><use href="#i-down"/></svg>Tải bản Windows</a>
+        <span class="meta" data-size="win-x64">.exe · 17 MB</span>
+      </article>
+      <article class="dl-card rv tilt glow" style="--d:.06s" data-os="mac-arm">
+        <div class="os"><svg><use href="#i-mac"/></svg></div>
+        <h3>Mac chip Apple</h3>
+        <p class="req">Mac M1, M2, M3, M4. macOS 12 trở lên.</p>
+        <a class="btn" data-asset="mac-arm64" href="https://github.com/lenhokhoa23/net-phat-hanh/releases/download/v0.1.4/GlassBox-Ink-0.1.4-mac-arm64.dmg"><svg><use href="#i-down"/></svg>Tải cho chip Apple</a>
+        <span class="meta" data-size="mac-arm64">.dmg · 20 MB</span>
+      </article>
+      <article class="dl-card rv tilt glow" style="--d:.12s" data-os="mac-intel">
+        <div class="os"><svg><use href="#i-mac"/></svg></div>
+        <h3>Mac chip Intel</h3>
+        <p class="req">Mac đời cũ chip Intel. macOS 12 trở lên.</p>
+        <a class="btn ghost" data-asset="mac-x64" href="https://github.com/lenhokhoa23/net-phat-hanh/releases/download/v0.1.4/GlassBox-Ink-0.1.4-mac-x64.dmg"><svg><use href="#i-down"/></svg>Tải cho chip Intel</a>
+        <span class="meta" data-size="mac-x64">.dmg · 21 MB</span>
+      </article>
+    </div>
+    <p class="note-mac">Mac chip gì? Bấm quả táo → <b>Giới thiệu về máy Mac này</b>: “Apple M…” là chip Apple, “Intel” là chip Intel.</p>
+    <div class="steps">
+      <div class="step rv"><h4>Mở tệp vừa tải</h4><p>Windows hiện “Windows đã bảo vệ máy tính”: bấm <b>Thông tin thêm</b> → <b>Vẫn chạy</b>. Mac: kéo GlassBox Ink vào Ứng dụng.</p></div>
+      <div class="step rv" style="--d:.06s"><h4>Mở app lần đầu</h4><p>Mac chặn thì vào <b>Cài đặt hệ thống → Quyền riêng tư &amp; Bảo mật</b> → <b>Vẫn mở</b>.</p></div>
+      <div class="step rv" style="--d:.12s"><h4>Dùng thử, rồi kích hoạt</h4><p>7 ngày không cần mạng. Có mã thì nhập ở <b>Cài đặt → Giới thiệu</b>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight lazy-sec" id="bang-gia">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Bảng giá</div>
+      <h2 data-split>Dùng thử trước, ưng rồi mới mua</h2>
+      <p>Mọi gói đều đủ tính năng, mỗi mã dùng cho một máy.</p>
+    </div>
+    <div class="plans">
+      <article class="plan rv tilt glow">
+        <h3>Dùng thử</h3>
+        <div class="old"></div>
+        <div class="price">0<small>đ</small></div>
+        <ul><li>7 ngày, đủ tính năng</li><li>Không cần mạng, không cần tài khoản</li></ul>
+        <a class="btn ghost" href="#tai-ve">Tải về dùng thử</a>
+      </article>
+      <article class="plan rv tilt glow" style="--d:.06s">
+        <span class="off">−17%</span>
+        <h3>1 năm</h3>
+        <div class="old">300.000đ</div>
+        <div class="price">250.000<small>đ</small></div>
+        <ul><li>Đủ mọi tính năng</li><li>Mọi bản cập nhật trong năm</li><li>Chuyển máy khi cần</li></ul>
+        <a class="btn ghost" href="#ho-tro">Mua qua Zalo</a>
+      </article>
+      <article class="plan hi rv tilt glow" style="--d:.12s">
+        <span class="off">−22%</span>
+        <h3>2 năm</h3>
+        <div class="old">450.000đ</div>
+        <div class="price">350.000<small>đ</small></div>
+        <ul><li>Đủ mọi tính năng</li><li>Mọi bản cập nhật trong 2 năm</li><li>Chuyển máy khi cần</li></ul>
+        <a class="btn" href="#ho-tro">Mua qua Zalo</a>
+      </article>
+      <article class="plan rv tilt glow" style="--d:.18s">
+        <span class="off">−21%</span>
+        <h3>Vĩnh viễn</h3>
+        <div class="old">700.000đ</div>
+        <div class="price">550.000<small>đ</small></div>
+        <ul><li>Đủ mọi tính năng</li><li>Dùng mãi, không gia hạn</li><li>Chuyển máy khi cần</li></ul>
+        <a class="btn ghost" href="#ho-tro">Mua qua Zalo</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec lazy-sec" id="ho-tro">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Mua và hỗ trợ</div>
+      <h2 data-split>Nhắn Zalo là có người trả lời</h2>
+    </div>
+    <div class="buy">
+      <div class="buy-qr rv">
+        <img class="qr" src="media/anh/zalo-qr.png" alt="Mã QR Zalo để mua mã kích hoạt GlassBox Ink" width="480" height="464" loading="lazy">
+        <div>
+          <h3>Mua mã kích hoạt</h3>
+          <ol>
+            <li>Mở Zalo, quét mã QR này.</li>
+            <li>Nhắn gói muốn mua: 1 năm, 2 năm hay vĩnh viễn.</li>
+            <li>Nhận mã, nhập ở <b>Cài đặt → Giới thiệu</b>.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="contact">
+        <a class="sup rv tilt glow" href="https://zalo.me/g/bov0yustx6fiwfgeb471" target="_blank" rel="noopener">
+          <div class="ic zalo"><svg><use href="#i-users"/></svg></div>
+          <div><h3>Nhóm Zalo</h3><p>Nhóm hỗ trợ thầy cô và các bạn</p></div>
+          <svg class="arrow"><use href="#i-arrow"/></svg>
+        </a>
+        <a class="sup rv tilt glow" style="--d:.06s" href="mailto:lenhokhoa0@gmail.com">
+          <div class="ic"><svg><use href="#i-mail"/></svg></div>
+          <div><h3>Email</h3><p>lenhokhoa0@gmail.com</p></div>
+          <svg class="arrow"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight lazy-sec" id="hoi-dap">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Hỏi đáp</div>
+      <h2 data-split>Thầy cô hay hỏi</h2>
+    </div>
+    <div class="faq rv">
+      <details open><summary>App có cần mạng không?</summary><div class="ans">Viết, vẽ, đồ thị, hình 3D chạy không cần mạng. Chỉ cần mạng khi nhập mã, tải bản mới và khi quét đề. Máy đã kích hoạt mà không lên mạng quá 7 ngày thì app nhắc kết nối lại.</div></details>
+      <details><summary>Một mã dùng được mấy máy?</summary><div class="ans">Một mã cho một máy. Đổi máy hay cài lại Windows thì nhắn Zalo kèm <b>Mã máy</b> (ở Cài đặt → Giới thiệu) để chuyển, hạn gói giữ nguyên.</div></details>
+      <details><summary>Quét đề cần gì?</summary><div class="ans">Quét đề dùng Google Gemini. Dán khoá API Gemini một lần trong app; khoá chỉ lưu trên máy. App chỉ gửi đúng vùng ảnh được khoanh.</div></details>
+      <details><summary>Cập nhật có mất bài không?</summary><div class="ans">Không. Sổ lưu trên máy, cài lại hay cập nhật bản mới vẫn còn nguyên.</div></details>
+      <details><summary>Dùng chuột được không?</summary><div class="ans">Chuột, bút cảm ứng hay ngón tay đều được. Có bút cảm ứng thì nét đậm nhạt theo lực nhấn.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight lazy-sec">
+  <div class="wrap">
+    <div class="final paper rv" id="final">
+      <svg class="logo" viewBox="0 0 48 48" style="width:64px;height:64px;margin:0 auto 18px" aria-hidden="true"><rect width="48" height="48" rx="12"/><path d="M11 30.5c2.2-9 4.6-14 6.6-11.2 1.7 2.4-.2 11.6 2.6 10.3 2.4-1.1 3.2-6.7 5.6-5.2 2 1.3 1.6 4.6 4 3.6 1.7-.7 2.7-2.6 4.6-3.2 1-.3 1.8.1 2.6.6"/></svg>
+      <h2 data-split>Tiết Toán ngày mai, soạn bằng GlassBox Ink</h2>
+      <p>Tải về, dùng thử 7 ngày miễn phí.</p>
+      <div class="cta"><a class="btn" href="#tai-ve" data-dl-primary><svg><use href="#i-down"/></svg>Tải cho <span data-os-name>Windows</span></a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12"/><path d="M11 30.5c2.2-9 4.6-14 6.6-11.2 1.7 2.4-.2 11.6 2.6 10.3 2.4-1.1 3.2-6.7 5.6-5.2 2 1.3 1.6 4.6 4 3.6 1.7-.7 2.7-2.6 4.6-3.2 1-.3 1.8.1 2.6.6"/></svg>GlassBox Ink</a>
+    <nav><a href="#xem-app">Tính năng</a><a href="#tai-ve">Tải về</a><a href="#bang-gia">Bảng giá</a><a href="#ho-tro">Hỗ trợ</a></nav>
+    <span>© 2026 GlassBox Ink</span>
+  </div>
+</footer>
+
+<script src="js/site.js" defer></script>
+</body>
+</html>
