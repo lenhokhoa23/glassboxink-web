@@ -244,11 +244,17 @@
     .then(rel => {
       const ver = String(rel.tag_name || '').replace(/^v/, '');
       if (ver) $$('[data-ver]').forEach(e => e.textContent = ver);
-      for (const asset of rel.assets || []) {
+      // Claude (16/11/2026, anh chốt tải zip cho Windows): bật WIN_ZIP khi hướng dẫn 3 bước có đủ ảnh thật. Tắt thì Windows tải .exe;
+      //   bật mà bản phát hành chưa có .zip thì vẫn dùng .exe.
+      const WIN_ZIP = false;
+      const assets = rel.assets || [];
+      const winExt = WIN_ZIP && assets.some(x => /-win-x64\.zip$/.test(x.name)) ? '.zip' : '.exe';
+      for (const asset of assets) {
         const key = ['win-x64', 'mac-arm64', 'mac-x64'].find(k => asset.name.includes(k));
         if (!key) continue;
+        const kind = asset.name.slice(asset.name.lastIndexOf('.'));
+        if (key === 'win-x64' && kind !== winExt) continue;
         $$(`a[data-asset="${key}"]`).forEach(a => a.href = asset.browser_download_url);
-        const kind = key === 'win-x64' ? '.exe' : '.dmg';
         $$(`[data-size="${key}"]`).forEach(s => s.textContent = `${kind} · ${Math.round(asset.size / 1048576)} MB`);
       }
       markOs();

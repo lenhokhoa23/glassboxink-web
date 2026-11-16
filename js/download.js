@@ -17,6 +17,8 @@
     win: {
       asset: 'win-x64', title: 'GlassBox Ink cho Windows', icon: '#i-win',
       note: 'GlassBox Ink mới ra mắt, chưa nhiều người tải nên Windows và trình duyệt sẽ cảnh báo. Thầy cô yên tâm, chỉ việc bấm <b>giữ lại</b> và <b>vẫn chạy</b> app theo các bước dưới đây.',
+      // Claude (16/11/2026): anh đã chốt tải zip cho Windows (bỏ được hai bước Keep); đổi sang hướng dẫn 3 bước khi có ảnh thật
+      //   của từng bước, cùng lúc bật WIN_ZIP trong js/site.js.
       steps: [
         { h: 'Trình duyệt hỏi: bấm Keep (Giữ lại)', p: 'Khi tệp tải xong, trình duyệt có thể báo tệp “isn\'t commonly downloaded”. Bấm dấu <b>···</b> cạnh tệp, chọn <b>Keep</b> (Giữ lại).', img: 'win-1-giu-lai.png', narrow: true },
         // Claude (16/11/2026): bước Edge hỏi lại qua SmartScreen sau khi bấm Keep; ảnh do anh chụp.
