@@ -246,7 +246,7 @@
       if (ver) $$('[data-ver]').forEach(e => e.textContent = ver);
       // Claude (16/11/2026, anh chốt tải zip cho Windows): bật WIN_ZIP khi hướng dẫn 3 bước có đủ ảnh thật. Tắt thì Windows tải .exe;
       //   bật mà bản phát hành chưa có .zip thì vẫn dùng .exe.
-      const WIN_ZIP = false;
+      const WIN_ZIP = true;
       const assets = rel.assets || [];
       const winExt = WIN_ZIP && assets.some(x => /-win-x64\.zip$/.test(x.name)) ? '.zip' : '.exe';
       for (const asset of assets) {

@@ -16,14 +16,14 @@
   const GUIDE = {
     win: {
       asset: 'win-x64', title: 'GlassBox Ink cho Windows', icon: '#i-win',
-      note: 'GlassBox Ink mới ra mắt, chưa nhiều người tải nên Windows và trình duyệt sẽ cảnh báo. Thầy cô yên tâm, chỉ việc bấm <b>giữ lại</b> và <b>vẫn chạy</b> app theo các bước dưới đây.',
-      // Claude (16/11/2026): anh đã chốt tải zip cho Windows (bỏ được hai bước Keep); đổi sang hướng dẫn 3 bước khi có ảnh thật
-      //   của từng bước, cùng lúc bật WIN_ZIP trong js/site.js.
+      note: 'GlassBox Ink mới ra mắt, chưa nhiều người tải nên Windows sẽ hỏi lại một lần. Thầy cô yên tâm, chỉ việc làm theo các bước dưới đây.',
+      // Claude (16/11/2026, anh chốt tải zip cho Windows): đã thử thật bằng Edge — tải zip không bị hỏi "isn't commonly downloaded" /
+      //   "Keep anyway", bấm tệp cài trong zip không hỏi giải nén, đi thẳng tới hộp "Windows protected your PC". Ảnh chụp thật trên máy
+      //   anh (đã che đường dẫn thư mục riêng). Ảnh cũ win-1-giu-lai, win-2-van-giu để lại trong media.
       steps: [
-        { h: 'Trình duyệt hỏi: bấm Keep (Giữ lại)', p: 'Khi tệp tải xong, trình duyệt có thể báo tệp “isn\'t commonly downloaded”. Bấm dấu <b>···</b> cạnh tệp, chọn <b>Keep</b> (Giữ lại).', img: 'win-1-giu-lai.png', narrow: true },
-        // Claude (16/11/2026): bước Edge hỏi lại qua SmartScreen sau khi bấm Keep; ảnh do anh chụp.
-        { h: 'Trình duyệt hỏi lại: bấm Keep anyway (Vẫn giữ lại)', p: 'Nếu hiện hộp “Make sure you trust … before you open it”, đừng bấm <b>Delete</b>. Bấm vào <b>mũi tên nhỏ</b> ở bên phải nút Delete, rồi chọn <b>Keep anyway</b> (Vẫn giữ lại).', img: 'win-2-van-giu.png', narrow: true },
-        { h: 'Mở tệp, bấm More info rồi Run anyway', p: 'Mở tệp vừa tải. Nếu hiện “Windows protected your PC”, bấm <b>More info</b> (Thông tin thêm), rồi <b>Run anyway</b> (Vẫn chạy).', img: 'win-2-van-chay.png' },
+        { h: 'Tải xong, bấm Open file', p: 'Trong danh sách tải của trình duyệt, bấm <b>Open file</b> (Mở tệp) ngay dưới tên tệp <b>GlassBox-Ink-…-win-x64.zip</b>. Hoặc mở thư mục <b>Downloads</b> rồi bấm đúp tệp zip.', img: 'win-zip-1-mo.png', narrow: true },
+        { h: 'Bấm đúp tệp cài trong cửa sổ vừa mở', p: 'Cửa sổ mở ra có một tệp <b>GlassBox-Ink-…-win-x64.exe</b>. Bấm đúp vào tệp này, không cần giải nén.', img: 'win-zip-2-tep-cai.png' },
+        { h: 'Windows hỏi: bấm More info rồi Run anyway', p: 'Hiện hộp xanh “Windows protected your PC”: bấm <b>More info</b> (Thông tin thêm), rồi <b>Run anyway</b> (Vẫn chạy).', img: 'win-2-van-chay.png' },
         { h: 'Bấm Cài đặt', p: 'Không cần quyền quản trị. Cài xong có biểu tượng <b>GlassBox Ink</b> trên màn hình nền.' },
       ],
     },
