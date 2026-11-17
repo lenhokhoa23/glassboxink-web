@@ -3,6 +3,14 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
+<script>
+  // Claude (17/11/2026): link giới thiệu glassboxink.io.vn/?gt=XXXXXXXX (8 chữ/số, app cấp cho khách đã mua) — ghé máy chủ bản quyền để
+  // ghi lượt bấm; máy chủ luôn chuyển về /#tai-ve (không còn ?gt nên không lặp).
+  try {
+    var gt = new URLSearchParams(location.search).get('gt');
+    if (gt && /^[0-9A-Za-z]{8}$/.test(gt)) location.replace('http://57.158.84.245/gt/' + gt);
+  } catch (e) {}
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GlassBox Ink · Sổ tay giảng Toán</title>
 <meta name="description" content="GlassBox Ink: sổ tay cho thầy cô giảng Toán và các bạn học Toán, chạy trên Windows và macOS. Viết tay mượt, đồ thị, bảng biến thiên, hình 3D, Oxyz, quét đề bằng AI. Dùng thử 7 ngày.">
