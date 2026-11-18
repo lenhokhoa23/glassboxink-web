@@ -309,7 +309,7 @@ footer a:hover { color: var(--ink); }
   .hand-word svg path { stroke-dashoffset: 0; }
   .kicker::after { clip-path: none; }
 }
-.buy-qr .qr { height: auto; aspect-ratio: 480 / 464; }
+.buy-qr .qr { height: auto; aspect-ratio: 1 / 1; }
 .contact { align-content: center; }
 
 /* ===== Claude: bản 3 (15/11/2026): đếm ngược ưu đãi, màn hình tải riêng ===== */
