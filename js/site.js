@@ -81,6 +81,16 @@
     const v = $('#heroWin video');
     if (!v || reduce) return;
     v.preload = 'auto';
+    // Claude 19/11: danh sách phát — video Trợ lý AI trước, xong tới video cũ, rồi quay vòng; chip nổi đổi theo video
+    const list = (v.dataset.list || '').split(',').filter(Boolean), stage = v.closest('.hero-stage');
+    let k = 0;
+    if (list.length > 1) v.addEventListener('ended', () => {
+      k = (k + 1) % list.length;
+      v.src = `media/video/${list[k]}.mp4`;
+      if (stage) stage.dataset.now = list[k] === 'hero' ? 'hero' : 'ai';
+      v.play().catch(() => {});
+    });
+    else v.loop = true;
     new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? v.play().catch(() => {}) : v.pause()), { threshold: .2 }).observe(v);
   }
 

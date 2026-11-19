@@ -49,6 +49,7 @@
     <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13m-5-5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.5l1.9 6.3 6.6 3.2-6.6 3.2L12 21.5l-1.9-6.3L3.5 12l6.6-3.2z" fill="currentColor"/><path d="M19 2.8l.6 1.9 1.9.6-1.9.6-.6 1.9-.6-1.9-1.9-.6 1.9-.6z" fill="currentColor" opacity=".7"/></symbol>
     <symbol id="i-scan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M7 12h10"/></g></symbol>
     <symbol id="i-graph" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V4M4 20h16"/><path d="M6 17c3-9 5-9 7-4s4 5 6-6"/></g></symbol>
     <symbol id="i-table" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8.5 4.5v15M11 16l3-3 3 3"/></g></symbol>
@@ -99,11 +100,11 @@
   <div class="glow-bg" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-text">
-      <span class="chip rv-h"><b>Mới <span data-ver>0.1.8</span></b>Sổ tay cho thầy cô giảng Toán và các bạn học Toán</span>
+      <span class="chip rv-h"><b>Mới <span data-ver>0.1.9</span></b>Sổ tay cho thầy cô giảng Toán và các bạn học Toán</span>
       <h1 data-split>Viết tay như trên giấy.
         <span class="line2"><span class="grad-text">Vẽ hình</span> <span class="hand-word">chuẩn như máy.<svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 20c40-12 80-14 120-8s90 8 172-6"/></svg></span></span>
       </h1>
-      <p class="lead rv-h" style="--d:.35s">Nét bút mượt có lực nhấn. Đồ thị, bảng biến thiên, hình không gian, Oxyz dựng trong vài giây. Chụp đề vào là AI dựng lại cả chữ lẫn hình.</p>
+      <p class="lead rv-h" style="--d:.35s">Nét bút mượt có lực nhấn. Đồ thị, bảng biến thiên, hình không gian, Oxyz dựng trong vài giây. <b>Trợ lý AI</b> giải bài, dựng hình, soạn đề theo lời bạn; chụp đề vào là AI dựng lại cả chữ lẫn hình.</p>
       <div class="cta rv-h" style="--d:.45s">
         <a class="btn" href="#tai-ve" data-dl-primary><svg><use href="#i-down"/></svg><span>Tải cho <span data-os-name>Windows</span><small>Dùng thử 7 ngày, miễn phí</small></span></a>
         <a class="btn ghost" href="#xem-app"><svg><use href="#i-play"/></svg>Xem app chạy</a>
@@ -114,19 +115,22 @@
         <span><svg><use href="#i-check"/></svg>Cập nhật một nút bấm</span>
       </div>
     </div>
-    <div class="hero-stage rv-h" style="--d:.6s">
-      <div class="float-chip fc1"><i><svg><use href="#i-pen"/></svg></i>Mực cầu vồng</div>
-      <div class="float-chip fc2"><i><svg><use href="#i-split"/></svg></i>Tách khối theo thiết diện</div>
-      <div class="float-chip fc3"><i><svg><use href="#i-cube"/></svg></i>Vật thể tròn xoay</div>
+    <div class="hero-stage rv-h" style="--d:.6s" data-now="ai">
+      <div class="float-chip fc1" data-set="ai"><i><svg><use href="#i-spark"/></svg></i>Trợ lý AI</div>
+      <div class="float-chip fc2" data-set="ai"><i><svg><use href="#i-cube"/></svg></i>Dựng hình 3D bằng lời</div>
+      <div class="float-chip fc3" data-set="ai"><i><svg><use href="#i-grade"/></svg></i>Soạn đề có đáp án</div>
+      <div class="float-chip fc1" data-set="hero"><i><svg><use href="#i-pen"/></svg></i>Mực cầu vồng</div>
+      <div class="float-chip fc2" data-set="hero"><i><svg><use href="#i-split"/></svg></i>Tách khối theo thiết diện</div>
+      <div class="float-chip fc3" data-set="hero"><i><svg><use href="#i-cube"/></svg></i>Vật thể tròn xoay</div>
       <div class="window" id="heroWin">
-        <video src="media/video/hero.mp4" poster="media/video/hero.jpg" muted loop playsinline preload="none" data-auto aria-label="GlassBox Ink: chữ mực cầu vồng, vật thể tròn xoay, tách hình chóp theo thiết diện"></video>
+        <video src="media/video/tro-ly.mp4" poster="media/video/tro-ly.jpg" data-list="tro-ly,hero" muted playsinline preload="none" data-auto aria-label="GlassBox Ink: Trợ lý AI giải bài, vẽ đồ thị, dựng hình chóp, soạn đề; rồi chữ mực cầu vồng, vật thể tròn xoay, tách hình chóp theo thiết diện"></video>
       </div>
     </div>
   </div>
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Hàm bậc ba</span><span>Bảng biến thiên</span><span>Hình chóp S.ABCD</span><span>Thiết diện</span><span>Trải hình</span><span>Mặt cong Oxyz</span><span>Vật thể tròn xoay</span><span>Khoảng cách</span><span>Chấm điểm</span><span>Chèn PDF</span><span>Quét đề</span>
-      <span>Hàm bậc ba</span><span>Bảng biến thiên</span><span>Hình chóp S.ABCD</span><span>Thiết diện</span><span>Trải hình</span><span>Mặt cong Oxyz</span><span>Vật thể tròn xoay</span><span>Khoảng cách</span><span>Chấm điểm</span><span>Chèn PDF</span><span>Quét đề</span>
+      <span>Trợ lý AI</span><span>Hàm bậc ba</span><span>Bảng biến thiên</span><span>Hình chóp S.ABCD</span><span>Thiết diện</span><span>Trải hình</span><span>Mặt cong Oxyz</span><span>Vật thể tròn xoay</span><span>Khoảng cách</span><span>Chấm điểm</span><span>Chèn PDF</span><span>Quét đề</span>
+      <span>Trợ lý AI</span><span>Hàm bậc ba</span><span>Bảng biến thiên</span><span>Hình chóp S.ABCD</span><span>Thiết diện</span><span>Trải hình</span><span>Mặt cong Oxyz</span><span>Vật thể tròn xoay</span><span>Khoảng cách</span><span>Chấm điểm</span><span>Chèn PDF</span><span>Quét đề</span>
     </div>
   </div>
 </section>
@@ -139,7 +143,11 @@
     </div>
     <div class="show">
       <div class="tabs" role="tablist" aria-label="Tính năng">
-        <button class="tab" role="tab" aria-selected="true" data-video="quet-de">
+        <button class="tab" role="tab" aria-selected="true" data-video="tro-ly">
+          <h3><i><svg><use href="#i-spark"/></svg></i>Trợ lý AI <span class="new-tag">Mới</span></h3>
+          <p>Hỏi bài là có lời giải từng bước. Nhờ vẽ đồ thị, dựng hình chóp, tách khối, soạn đề trắc nghiệm có đáp án: trợ lý làm ngay trên trang của bạn.</p><span class="bar"><b></b></span>
+        </button>
+        <button class="tab" role="tab" aria-selected="false" data-video="quet-de">
           <h3><i><svg><use href="#i-scan"/></svg></i>Quét đề bằng AI</h3>
           <p>Dán ảnh đề, khoanh vùng. App đọc đề, gõ lại câu có công thức và dựng hình để sửa tiếp.</p><span class="bar"><b></b></span>
         </button>
@@ -173,7 +181,7 @@
         </button>
       </div>
       <div class="show-stage">
-        <div class="window"><video id="showVideo" muted playsinline preload="none" poster="media/video/quet-de.jpg" aria-label="Video tính năng đang chọn"></video></div>
+        <div class="window"><video id="showVideo" muted playsinline preload="none" poster="media/video/tro-ly.jpg" aria-label="Video tính năng đang chọn"></video></div>
         <p class="tab-desc" id="tabDesc"></p>
       </div>
     </div>
@@ -223,6 +231,20 @@
       <h2 data-split>Đủ đồ nghề cho một tiết Toán</h2>
     </div>
     <div class="bento">
+      <article class="card full ai-card rv glow">
+        <div class="ai-head">
+          <div class="ic"><svg><use href="#i-spark"/></svg></div>
+          <div>
+            <h3>Trợ lý AI: nói là làm</h3>
+            <p>Gõ như nhắn tin. Trợ lý giải bài từng bước, vẽ đồ thị, dựng và tách khối, soạn đề có đáp án, thêm trang, đổi bút. Mọi thứ đặt lên trang đều sửa tiếp và Hoàn tác được. Dùng chung khoá Gemini miễn phí với Quét đề.</p>
+          </div>
+        </div>
+        <div class="ai-shots">
+          <figure><div class="window"><img src="media/anh/ai-hoi-bai.jpg" alt="Trợ lý AI giải tìm cực trị của y = x³ − 3x từng bước" loading="lazy"></div><figcaption><b>Hỏi bài</b>“Tìm cực trị của hàm số y = x³ − 3x”</figcaption></figure>
+          <figure><div class="window"><img src="media/anh/ai-dung-hinh.jpg" alt="Trợ lý AI dựng hình chóp S.ABCD và tách theo mặt phẳng (SAC)" loading="lazy"></div><figcaption><b>Dựng hình 3D</b>“Dựng chóp S.ABCD đáy vuông cạnh 4, SA ⊥ đáy”, rồi “tách theo (SAC)”</figcaption></figure>
+          <figure><div class="window"><img src="media/anh/ai-soan-de.jpg" alt="Trợ lý AI soạn hai câu trắc nghiệm về đạo hàm có đáp án" loading="lazy"></div><figcaption><b>Soạn đề</b>“Soạn 2 câu trắc nghiệm về đạo hàm, có lời giải”</figcaption></figure>
+        </div>
+      </article>
       <article class="card wide rv tilt glow">
         <div class="ic"><svg><use href="#i-pdf"/></svg></div>
         <h3>Chèn PDF, ảnh, chèn khoảng trống</h3>
@@ -267,6 +289,7 @@
       <h2 data-split>Gọn gàng, dễ nhìn</h2>
     </div>
     <div class="gallery" id="gallery">
+      <figure class="shot"><div class="window"><img src="media/anh/ai-toan-canh.jpg" alt="Trợ lý AI vẽ đồ thị và đánh dấu cực trị" loading="lazy" width="1366" height="768"></div><figcaption>Trợ lý AI</figcaption></figure>
       <figure class="shot"><div class="window"><img src="media/anh/05_do_thi_light.jpg" alt="Xưởng Đồ thị" loading="lazy" width="1366" height="768"></div><figcaption>Xưởng Đồ thị</figcaption></figure>
       <figure class="shot"><div class="window"><img src="media/anh/06_bang_bien_thien_light.jpg" alt="Bảng biến thiên" loading="lazy" width="1366" height="768"></div><figcaption>Bảng biến thiên</figcaption></figure>
       <figure class="shot"><div class="window"><img src="media/anh/04_dung_hinh_chop_light.jpg" alt="Dựng hình không gian" loading="lazy" width="1366" height="768"></div><figcaption>Dựng hình không gian</figcaption></figure>
@@ -281,28 +304,28 @@
     <div class="sec-head rv">
       <div class="kicker">Tải về</div>
       <h2 data-split>Cài trong một phút, dùng thử 7 ngày</h2>
-      <p>Bản mới nhất: <b data-ver>0.1.8</b></p>
+      <p>Bản mới nhất: <b data-ver>0.1.9</b></p>
     </div>
     <div class="dl">
       <article class="dl-card rv tilt glow" data-os="win">
         <div class="os"><svg><use href="#i-win"/></svg></div>
         <h3>Windows</h3>
         <p class="req">Windows 10, Windows 11 (64-bit).</p>
-        <a class="btn" data-asset="win-x64" href="https://github.com/lenhokhoa23/net-phat-hanh/releases/download/v0.1.8/GlassBox-Ink-0.1.8-win-x64.zip"><svg><use href="#i-down"/></svg>Tải bản Windows</a>
+        <a class="btn" data-asset="win-x64" href="https://github.com/lenhokhoa23/net-phat-hanh/releases/download/v0.1.9/GlassBox-Ink-0.1.9-win-x64.zip"><svg><use href="#i-down"/></svg>Tải bản Windows</a>
         <span class="meta" data-size="win-x64">.zip · 17 MB</span>
       </article>
       <article class="dl-card rv tilt glow" style="--d:.06s" data-os="mac-arm">
         <div class="os"><svg><use href="#i-mac"/></svg></div>
         <h3>Mac chip Apple</h3>
         <p class="req">Mac M1, M2, M3, M4. macOS 12 trở lên.</p>
-        <a class="btn" data-asset="mac-arm64" href="https://github.com/lenhokhoa23/net-phat-hanh/releases/download/v0.1.8/GlassBox-Ink-0.1.8-mac-arm64.dmg"><svg><use href="#i-down"/></svg>Tải cho chip Apple</a>
+        <a class="btn" data-asset="mac-arm64" href="https://github.com/lenhokhoa23/net-phat-hanh/releases/download/v0.1.9/GlassBox-Ink-0.1.9-mac-arm64.dmg"><svg><use href="#i-down"/></svg>Tải cho chip Apple</a>
         <span class="meta" data-size="mac-arm64">.dmg · 20 MB</span>
       </article>
       <article class="dl-card rv tilt glow" style="--d:.12s" data-os="mac-intel">
         <div class="os"><svg><use href="#i-mac"/></svg></div>
         <h3>Mac chip Intel</h3>
         <p class="req">Mac đời cũ chip Intel. macOS 12 trở lên.</p>
-        <a class="btn ghost" data-asset="mac-x64" href="https://github.com/lenhokhoa23/net-phat-hanh/releases/download/v0.1.8/GlassBox-Ink-0.1.8-mac-x64.dmg"><svg><use href="#i-down"/></svg>Tải cho chip Intel</a>
+        <a class="btn ghost" data-asset="mac-x64" href="https://github.com/lenhokhoa23/net-phat-hanh/releases/download/v0.1.9/GlassBox-Ink-0.1.9-mac-x64.dmg"><svg><use href="#i-down"/></svg>Tải cho chip Intel</a>
         <span class="meta" data-size="mac-x64">.dmg · 21 MB</span>
       </article>
     </div>
@@ -411,6 +434,7 @@
       <details open><summary>App có cần mạng không?</summary><div class="ans">Viết, vẽ, đồ thị, hình 3D chạy không cần mạng. Chỉ cần mạng khi nhập mã, tải bản mới và khi quét đề. Máy đã kích hoạt mà không lên mạng quá 7 ngày thì app nhắc kết nối lại.</div></details>
       <details><summary>Một mã dùng được mấy máy?</summary><div class="ans">Một mã cho một máy. Đổi máy hay cài lại Windows thì nhắn Zalo kèm <b>Mã máy</b> (ở Cài đặt → Giới thiệu) để chuyển, hạn gói giữ nguyên.</div></details>
       <details><summary>Quét đề cần gì?</summary><div class="ans">Quét đề dùng AI Gemini của Google. Thầy cô cần một khoá Gemini miễn phí, dán một lần trong app; khoá chỉ lưu trên máy, app chỉ gửi đúng vùng ảnh được khoanh. <a class="ans-link" href="#huong-dan-gemini">Xem hướng dẫn lấy khoá miễn phí →</a></div></details>
+      <details><summary>Trợ lý AI cần gì, có mất phí không?</summary><div class="ans">Trợ lý AI dùng chung khoá Gemini miễn phí với Quét đề, không mất thêm phí. Mở bằng Ctrl+J hoặc nút ✦ Hỏi trợ lý ở thanh dưới cùng. App chỉ gửi câu bạn hỏi, mô tả các hình trên trang (không gửi nét viết tay) và ảnh bạn tự đính kèm. <a class="ans-link" href="#huong-dan-gemini">Xem hướng dẫn lấy khoá miễn phí →</a></div></details>
       <details><summary>Cập nhật có mất bài không?</summary><div class="ans">Không. Sổ lưu trên máy, cài lại hay cập nhật bản mới vẫn còn nguyên.</div></details>
       <details><summary>Dùng chuột được không?</summary><div class="ans">Chuột, bút cảm ứng hay ngón tay đều được. Có bút cảm ứng thì nét đậm nhạt theo lực nhấn.</div></details>
     </div>

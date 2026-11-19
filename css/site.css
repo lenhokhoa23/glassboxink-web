@@ -399,3 +399,21 @@ html.dlp-lock, html.dlp-lock body { overflow: hidden; }
 .dlp-card a, .dlp-done a:not(.btn) { color: var(--accent); font-weight: 800; }
 .ans-link { display: inline-block; margin-top: 6px; color: var(--accent); font-weight: 800; text-decoration: none; }
 .ans-link:hover { text-decoration: underline; }
+
+/* Claude 19/11/2026 — Trợ lý AI */
+.float-chip[data-set] { transition: opacity .5s ease, translate .5s ease; }
+.hero-stage[data-now="ai"] .float-chip[data-set="hero"], .hero-stage[data-now="hero"] .float-chip[data-set="ai"] { opacity: 0; translate: 0 8px; pointer-events: none; }
+.new-tag { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 99px; font-size: 11px; font-weight: 700; vertical-align: middle;
+  color: #fff; background: linear-gradient(90deg, #6d4aff, #d94dff); letter-spacing: .02em; }
+.card.full { grid-column: 1 / -1; }
+.ai-card { background: linear-gradient(135deg, rgba(109,74,255,.07), rgba(217,77,255,.05) 45%, var(--surface) 80%); }
+.ai-head { display: flex; gap: 16px; align-items: flex-start; }
+.ai-head .ic { flex: none; background: linear-gradient(135deg, #6d4aff, #d94dff); color: #fff; }
+.ai-head p { max-width: 760px; }
+.ai-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 20px; }
+.ai-shots figure { margin: 0; }
+.ai-shots .window { aspect-ratio: 16 / 10; overflow: hidden; }
+.ai-shots img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.ai-shots figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); line-height: 1.45; }
+.ai-shots figcaption b { display: block; color: var(--ink); font-size: 15px; margin-bottom: 2px; }
+@media (max-width: 860px) { .ai-shots { grid-template-columns: 1fr; } .ai-head { flex-direction: column; } }
