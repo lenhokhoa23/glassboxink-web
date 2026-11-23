@@ -47,7 +47,7 @@
   <div class="wrap">
     <article class="doc">
       <h1>Chính sách quyền riêng tư</h1>
-      <p class="date">Có hiệu lực từ ngày 23/11/2026</p>
+      <p class="date">Có hiệu lực từ ngày 23/11/2026 (cập nhật: lưu trong thư mục GlassBox Ink hiện ra trên Drive)</p>
 
       <p>GlassBox Ink là app sổ tay viết Toán chạy trên Windows và macOS. Trang này nói rõ app dùng những dữ liệu nào, lưu ở đâu, gửi cho ai và cách bạn xoá chúng.</p>
 
@@ -67,9 +67,9 @@
       <h2>3. Đồng bộ Google Drive (tuỳ chọn)</h2>
       <p>Không đăng nhập thì app không kết nối Google. Nếu bạn bấm <em>Đăng nhập Google</em> (Tệp → Đám mây) để đồng bộ sổ giữa các máy:</p>
       <ul>
-        <li>App xin đúng ba quyền: <code>drive.appdata</code> (thư mục dữ liệu ẩn của riêng GlassBox Ink trong Google Drive của bạn), <code>openid</code> và <code>email</code> (để hiện bạn đang đăng nhập tài khoản nào).</li>
-        <li>App <strong>không đọc, không sửa, không xoá</strong> bất kỳ tệp nào khác trong Google Drive của bạn; quyền <code>drive.appdata</code> chỉ cho vào thư mục ẩn của app.</li>
-        <li>Sổ đồng bộ được lưu trong Google Drive <strong>của chính bạn</strong> và tính vào dung lượng Drive của bạn. Dữ liệu đi thẳng giữa máy bạn và Google; không qua máy chủ của GlassBox Ink.</li>
+        <li>App xin đúng ba quyền: <code>drive.file</code> (chỉ những tệp, thư mục do GlassBox Ink tạo trong Google Drive của bạn), <code>openid</code> và <code>email</code> (để hiện bạn đang đăng nhập tài khoản nào).</li>
+        <li>App <strong>không đọc, không sửa, không xoá</strong> bất kỳ tệp nào khác trong Google Drive của bạn; quyền <code>drive.file</code> chỉ cho app đụng tới tệp do chính app tạo.</li>
+        <li>Sổ đồng bộ được lưu trong thư mục <strong>GlassBox Ink</strong> ở “Drive của tôi” của <strong>chính bạn</strong> và tính vào dung lượng Drive của bạn. Thư mục con “Dữ liệu đồng bộ” chứa tệp kỹ thuật, bạn không nên sửa hay xoá tay. Dữ liệu đi thẳng giữa máy bạn và Google; không qua máy chủ của GlassBox Ink.</li>
         <li>Mã đăng nhập (refresh token) chỉ lưu trên máy bạn. Email tài khoản chỉ dùng để hiện trong app.</li>
         <li>Đăng xuất trong app sẽ thu hồi quyền và xoá mã đăng nhập khỏi máy; sổ trên máy và trên Drive giữ nguyên.</li>
       </ul>
@@ -90,7 +90,7 @@
       <h2>6. Xoá dữ liệu</h2>
       <ul>
         <li>Sổ trên máy: xoá trong Thư viện (Thùng rác → Xoá hẳn), hoặc gỡ app và xoá thư mục dữ liệu.</li>
-        <li>Dữ liệu đồng bộ trên Drive: vào Google Drive → Cài đặt → Quản lý ứng dụng → GlassBox Ink → <em>Xoá dữ liệu ứng dụng ẩn</em>.</li>
+        <li>Dữ liệu đồng bộ trên Drive: xoá thư mục <strong>GlassBox Ink</strong> trong Google Drive của bạn (nhớ đăng xuất đồng bộ trong app trước, nếu không app sẽ tạo lại).</li>
         <li>Thu hồi quyền của app với tài khoản Google: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.</li>
       </ul>
 
