@@ -1,0 +1,111 @@
+<!doctype html>
+<!-- Claude (23/11/2026): trang Chính sách quyền riêng tư — Google yêu cầu khi đưa đăng nhập Google (đồng bộ Drive) sang chế độ chính thức.
+     Nội dung khớp cách app đang chạy: sổ ở trên máy; đồng bộ Google Drive là tuỳ chọn, chỉ dùng thư mục ẩn của app trong Drive của người dùng. -->
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chính sách quyền riêng tư · GlassBox Ink</title>
+<meta name="description" content="GlassBox Ink thu thập gì, lưu ở đâu, dùng dữ liệu Google (đồng bộ Google Drive) thế nào và cách bạn xoá dữ liệu.">
+<meta name="theme-color" content="#5B3FC4">
+<link rel="icon" href="media/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;600;700;800;900&display=swap&subset=vietnamese" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=20261119a">
+<style>
+  .policy { padding: 48px 0 72px; }
+  .policy .doc { max-width: 760px; margin-inline: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
+    padding: clamp(22px, 4vw, 48px); box-shadow: var(--shadow); }
+  .policy h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 0; }
+  .policy .date { color: var(--muted); font-weight: 700; margin-top: 8px; }
+  .policy h2 { font-size: 21px; margin: 34px 0 8px; }
+  .policy p, .policy li { color: var(--ink); }
+  .policy ul { padding-left: 22px; margin: 8px 0; }
+  .policy li { margin: 6px 0; }
+  .policy .note { background: var(--surface2); border-radius: 14px; padding: 14px 18px; margin-top: 18px; color: var(--muted); }
+  .policy a { color: #5B3FC4; font-weight: 700; }
+  .policy code { font-size: 15px; background: var(--surface2); padding: 1px 6px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<header class="nav" id="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="GlassBox Ink">
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12"/><path d="M11 30.5c2.2-9 4.6-14 6.6-11.2 1.7 2.4-.2 11.6 2.6 10.3 2.4-1.1 3.2-6.7 5.6-5.2 2 1.3 1.6 4.6 4 3.6 1.7-.7 2.7-2.6 4.6-3.2 1-.3 1.8.1 2.6.6"/></svg>
+      GlassBox Ink
+    </a>
+    <nav class="nav-links" aria-label="Mục chính">
+      <a href="./#xem-app">Tính năng</a>
+      <a href="./#tai-ve">Tải về</a>
+      <a href="./#ho-tro">Hỗ trợ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="policy">
+  <div class="wrap">
+    <article class="doc">
+      <h1>Chính sách quyền riêng tư</h1>
+      <p class="date">Có hiệu lực từ ngày 23/11/2026</p>
+
+      <p>GlassBox Ink là app sổ tay viết Toán chạy trên Windows và macOS. Trang này nói rõ app dùng những dữ liệu nào, lưu ở đâu, gửi cho ai và cách bạn xoá chúng.</p>
+
+      <h2>1. Sổ và bài giảng của bạn</h2>
+      <ul>
+        <li>Sổ, trang, nét viết, ảnh và PDF bạn chèn được lưu <strong>trên máy của bạn</strong>.</li>
+        <li>App không gửi sổ của bạn lên máy chủ của GlassBox Ink. Chúng tôi không có máy chủ nào chứa sổ của bạn.</li>
+        <li>Sổ chỉ rời máy khi chính bạn bật <strong>Đồng bộ Google Drive</strong> (mục 3) hoặc tự xuất, chia sẻ tệp.</li>
+      </ul>
+
+      <h2>2. Bản quyền (dùng thử, kích hoạt)</h2>
+      <ul>
+        <li>Khi dùng thử, kích hoạt hay xác nhận mã, app gửi tới máy chủ giấy phép: mã máy (đã mã hoá một chiều, không đọc ngược ra tên máy hay thông tin cá nhân), mã kích hoạt, mã người giới thiệu nếu có, phiên bản app và hệ điều hành.</li>
+        <li>Máy chủ ghi kèm địa chỉ IP và thời điểm để chống gian lận và tấn công. Nhật ký giữ 30 ngày.</li>
+      </ul>
+
+      <h2>3. Đồng bộ Google Drive (tuỳ chọn)</h2>
+      <p>Không đăng nhập thì app không kết nối Google. Nếu bạn bấm <em>Đăng nhập Google</em> (Tệp → Đám mây) để đồng bộ sổ giữa các máy:</p>
+      <ul>
+        <li>App xin đúng ba quyền: <code>drive.appdata</code> (thư mục dữ liệu ẩn của riêng GlassBox Ink trong Google Drive của bạn), <code>openid</code> và <code>email</code> (để hiện bạn đang đăng nhập tài khoản nào).</li>
+        <li>App <strong>không đọc, không sửa, không xoá</strong> bất kỳ tệp nào khác trong Google Drive của bạn; quyền <code>drive.appdata</code> chỉ cho vào thư mục ẩn của app.</li>
+        <li>Sổ đồng bộ được lưu trong Google Drive <strong>của chính bạn</strong> và tính vào dung lượng Drive của bạn. Dữ liệu đi thẳng giữa máy bạn và Google; không qua máy chủ của GlassBox Ink.</li>
+        <li>Mã đăng nhập (refresh token) chỉ lưu trên máy bạn. Email tài khoản chỉ dùng để hiện trong app.</li>
+        <li>Đăng xuất trong app sẽ thu hồi quyền và xoá mã đăng nhập khỏi máy; sổ trên máy và trên Drive giữ nguyên.</li>
+      </ul>
+      <p class="note">Việc GlassBox Ink sử dụng và chuyển giao thông tin nhận được từ Google API tuân thủ <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Chính sách dữ liệu người dùng của Dịch vụ API Google</a>, bao gồm các yêu cầu về Sử dụng có giới hạn (Limited Use). Dữ liệu Google không được dùng để quảng cáo, không bán, không chuyển cho bên thứ ba, và không dùng để huấn luyện mô hình AI.</p>
+
+      <h2>4. Quét đề, Trợ lý và Đổi sang chữ in (Google Gemini)</h2>
+      <ul>
+        <li>Khi bạn dùng Quét đề, Quét hàng loạt ảnh, Trợ lý hay Đổi sang chữ in, app gửi đúng vùng ảnh, ảnh hoặc nét viết bạn chọn (và câu bạn hỏi) tới Google Gemini <strong>bằng khoá Gemini của chính bạn</strong>. Việc xử lý đó theo điều khoản của Google.</li>
+        <li>Khoá Gemini chỉ lưu trên máy bạn.</li>
+      </ul>
+
+      <h2>5. Những điều chúng tôi không làm</h2>
+      <ul>
+        <li>Không bán, không chia sẻ dữ liệu của bạn cho bên khác.</li>
+        <li>Không chạy quảng cáo, không theo dõi cách bạn dùng app.</li>
+      </ul>
+
+      <h2>6. Xoá dữ liệu</h2>
+      <ul>
+        <li>Sổ trên máy: xoá trong Thư viện (Thùng rác → Xoá hẳn), hoặc gỡ app và xoá thư mục dữ liệu.</li>
+        <li>Dữ liệu đồng bộ trên Drive: vào Google Drive → Cài đặt → Quản lý ứng dụng → GlassBox Ink → <em>Xoá dữ liệu ứng dụng ẩn</em>.</li>
+        <li>Thu hồi quyền của app với tài khoản Google: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.</li>
+      </ul>
+
+      <h2>7. Thay đổi và liên hệ</h2>
+      <p>Khi chính sách thay đổi, bản mới đăng tại trang này kèm ngày có hiệu lực. Câu hỏi về quyền riêng tư, bạn nhắn cho chúng tôi qua <a href="https://zalo.me/g/bov0yustx6fiwfgeb471" target="_blank" rel="noopener">nhóm Zalo hỗ trợ GlassBox Ink</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12"/><path d="M11 30.5c2.2-9 4.6-14 6.6-11.2 1.7 2.4-.2 11.6 2.6 10.3 2.4-1.1 3.2-6.7 5.6-5.2 2 1.3 1.6 4.6 4 3.6 1.7-.7 2.7-2.6 4.6-3.2 1-.3 1.8.1 2.6.6"/></svg>GlassBox Ink</a>
+    <nav><a href="./#tai-ve">Tải về</a><a href="./#ho-tro">Hỗ trợ</a><a href="chinh-sach-rieng-tu.html">Quyền riêng tư</a></nav>
+    <span>© 2026 GlassBox Ink</span>
+  </div>
+</footer>
+</body>
+</html>
