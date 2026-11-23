@@ -41,17 +41,35 @@
       { h: 'Bấm Create key', p: 'Hộp <b>Create a new key</b> hiện ra. Giữ nguyên tên và dự án, bấm <b>Create key</b>.', img: 'gemini-3.png', mid: true },
       { h: 'Bấm Copy key để chép khoá', p: 'Hộp <b>API key details</b> hiện ra. Bấm <b>Copy key</b>.', tip: 'Không cần bấm “Set up billing”: gói Free tier miễn phí là đủ dùng. Khoá giống như mật khẩu, thầy cô đừng gửi cho người khác.', img: 'gemini-4.png', narrow: true },
       { part: 'Phần 2. Dán khoá vào GlassBox Ink' },
-      { h: 'Mở GlassBox Ink, bấm tab Chèn', p: 'Tab <b>Chèn</b> nằm trên thanh công cụ (số 5 trong hình).', img: 'gemini-5.png' },
+      { h: 'Mở GlassBox Ink, bấm tab AI', p: 'Tab <b>AI</b> nằm trên thanh công cụ (bản cũ: tab <b>Chèn</b>, số 5 trong hình).', img: 'gemini-5.png' },
       { h: 'Bấm Quét đề', p: 'Bấm <b>Quét đề</b> (số 6). Lần đầu, app hiện hộp <b>Khoá Gemini cho Quét đề</b>.' },
       { h: 'Dán khoá vào ô', p: 'Bấm vào ô <b>Dán khoá API Gemini</b>, nhấn <b>Ctrl + V</b> (trên Mac: <b>⌘ + V</b>).', img: 'gemini-6.png', mid: true },
       { h: 'Bấm Lưu', p: 'Ô <b>Mô hình AI</b> để nguyên. Vậy là xong.' },
     ],
     done: `<div><h3>Dùng Quét đề</h3>
-      <p>Dán ảnh đề vào trang (chụp màn hình rồi nhấn <b>Ctrl + V</b>, hoặc <b>Chèn → Chèn ảnh</b>). Bấm <b>Chèn → Quét đề</b>, kéo khung quanh đề, chọn loại đề trong hộp hiện ra. App gửi vùng đã khoanh cho Gemini, đọc đề và dựng hình ngay trong sổ.</p>
+      <p>Dán ảnh đề vào trang (chụp màn hình rồi nhấn <b>Ctrl + V</b>, hoặc <b>Chèn → Chèn ảnh</b>). Bấm <b>AI → Quét đề</b>, kéo khung quanh đề, chọn chép đề, dựng hình hay cả hai. App gửi vùng đã khoanh cho Gemini, đọc đề và dựng hình ngay trong sổ. Nhiều ảnh, cả trang đề: dùng <b>AI → Quét hàng loạt ảnh</b>.</p>
       <p>Muốn đổi khoá: nhấn <b>Ctrl + K</b> (Mac: <b>⌘ + K</b>), gõ “Khoá Gemini” rồi chọn lệnh <b>Khoá Gemini…</b></p></div>
       <div class="dlp-done-a"><a class="btn" href="#xem-app" data-dlp-close>Xem Quét đề chạy thật</a>
       <a class="btn ghost" href="https://zalo.me/g/bov0yustx6fiwfgeb471" target="_blank" rel="noopener">Hỏi nhóm Zalo</a></div>`,
   };
+  // Claude (23/11/2026): hướng dẫn bật đồng bộ Google Drive. Ảnh dựng từ giao diện thật của app (không phải ảnh chụp có email thật).
+  GUIDE.dongbo = {
+    guide: true, hash: '#huong-dan-dong-bo', icon: '#i-cloud',
+    kicker: 'Hướng dẫn · khoảng 1 phút', title: 'Bật đồng bộ Google Drive',
+    note: 'Đồng bộ giúp <b>mọi máy dùng chung một bộ sổ</b> (máy ở nhà, máy ở trường…). Không bắt buộc, miễn phí, làm <b>một lần trên mỗi máy</b> với cùng một tài khoản Google.',
+    steps: [
+      { h: 'Mở bảng Đồng bộ trong app', p: 'Trong GlassBox Ink, bấm tab <b>Tệp</b> → <b>Đồng bộ đám mây</b> (nhóm Đám mây). Bảng Đồng bộ Google Drive hiện ra, bấm <b>Đăng nhập Google</b>.', img: 'drive-1-bang.png', mid: true },
+      { h: 'Chọn tài khoản Google', p: 'Trình duyệt mở trang của Google. Chọn tài khoản Google của bạn (dùng cùng một tài khoản trên mọi máy).' },
+      { h: 'TÍCH ô Google Drive rồi bấm Tiếp tục', p: 'Ở trang “GlassBox Ink muốn truy cập Tài khoản Google của bạn”, Google để <b>trống sẵn</b> ô Google Drive. Bạn <b>tích vào ô đó</b> như hình rồi bấm <b>Tiếp tục</b>.', tip: 'Quên tích ô này thì app chưa đồng bộ được: app sẽ báo và hướng dẫn bạn đăng nhập lại.', img: 'drive-2-tich.png', mid: true },
+      { h: 'Quay lại app: xong', p: 'Trình duyệt báo đã đăng nhập, bạn quay lại GlassBox Ink. Chấm đám mây cạnh chữ <b>Đã lưu</b> chuyển xanh là sổ đã đồng bộ. Bấm vào chấm đó để xem tài khoản và mở thư mục <b>GlassBox Ink</b> trên Drive.', img: 'drive-3-xong.png', mid: true },
+    ],
+    done: `<div><h3>Dùng trên máy khác</h3>
+      <p>Cài GlassBox Ink, đăng nhập Google bằng <b>đúng tài khoản đó</b> (nhớ tích ô Google Drive). App tự tải toàn bộ sổ về; từ đó các máy tự đồng bộ với nhau.</p>
+      <p>Sổ nằm trong thư mục <b>GlassBox Ink</b> ở Drive của tôi. Thư mục con “Dữ liệu đồng bộ” là tệp kỹ thuật: bạn đừng sửa hay xoá tay. <a href="chinh-sach-rieng-tu.html">Chính sách quyền riêng tư</a></p></div>
+      <div class="dlp-done-a"><a class="btn" href="#tai-ve" data-dlp-close>Tải GlassBox Ink</a>
+      <a class="btn ghost" href="https://zalo.me/g/bov0yustx6fiwfgeb471" target="_blank" rel="noopener">Hỏi nhóm Zalo</a></div>`,
+  };
+  const GUIDE_OF_HASH = { '#huong-dan-gemini': 'gemini', '#huong-dan-dong-bo': 'dongbo' };
   const OS_OF_ASSET = { 'win-x64': 'win', 'mac-arm64': 'mac-arm', 'mac-x64': 'mac-intel' };
 
   const page = $('#dlp');
@@ -122,8 +140,9 @@
 
   // bấm nút tải (thẻ máy hoặc nút chính ở đầu trang)
   document.addEventListener('click', e => {
-    const gl = e.target.closest('a[href="#huong-dan-gemini"]');
-    if (gl) { e.preventDefault(); if (!page.hidden) { page.classList.remove('open'); history.replaceState(null, '', location.pathname + location.search); } open('gemini'); return; }
+    const gl = e.target.closest('a[href^="#huong-dan-"]');
+    const gk = gl && GUIDE_OF_HASH[gl.getAttribute('href')];
+    if (gk) { e.preventDefault(); if (!page.hidden) { page.classList.remove('open'); history.replaceState(null, '', location.pathname + location.search); } open(gk); return; }
     const a = e.target.closest('a[data-asset], a[data-dl-primary]');
     if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
     let key = a.dataset.asset;
@@ -162,7 +181,7 @@
   });
   // mở thẳng link hướng dẫn (vd gửi cho thầy cô: glassboxink.io.vn/#tai-win)
   function hashOs() {
-    if (location.hash === '#huong-dan-gemini') return 'gemini';
+    if (GUIDE_OF_HASH[location.hash]) return GUIDE_OF_HASH[location.hash];
     const m = location.hash.match(/^#tai-(win|mac-arm|mac-intel)$/);
     return m ? m[1] : null;
   }
