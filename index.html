@@ -12,10 +12,11 @@
   } catch (e) {}
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>GlassBox Ink · Sổ tay viết Toán</title>
-<meta name="description" content="GlassBox Ink: sổ tay cho thầy cô giảng Toán và các bạn học Toán, chạy trên Windows và macOS. Viết tay mượt, đồ thị, bảng biến thiên, hình 3D, Oxyz, quét đề bằng AI. Dùng thử 7 ngày.">
+<title>GlassBox Ink · Phần mềm dạy Toán: viết tay, vẽ hình, đồ thị</title>
+<meta name="description" content="GlassBox Ink là phần mềm sổ tay dạy và học Toán trên Windows, macOS: viết tay mượt, vẽ hình không gian, đồ thị hàm số, bảng biến thiên, Oxyz; trợ lý AI, quét đề. Dùng thử 7 ngày.">
 <meta name="theme-color" content="#5B3FC4">
-<meta property="og:title" content="GlassBox Ink · Sổ tay viết Toán">
+<meta property="og:title" content="GlassBox Ink · Phần mềm dạy Toán: viết tay, vẽ hình, đồ thị">
+<meta property="og:locale" content="vi_VN">
 <meta property="og:description" content="Sổ tay cho thầy cô giảng Toán và các bạn học Toán. Viết tay như trên giấy, vẽ hình chuẩn như máy. Dùng thử 7 ngày.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://glassboxink.io.vn/">
@@ -38,6 +39,7 @@
     if (/^#(tai-|huong-dan-)/.test(location.hash) || (sessionStorage.getItem('gb-intro') && !/introAt=/.test(location.search)) || matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('no-intro');
   } catch (e) {}
 </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://glassboxink.io.vn/#website","url":"https://glassboxink.io.vn/","name":"GlassBox Ink","alternateName":["GlassBoxInk","GlassBox Ink - sổ tay viết Toán"],"inLanguage":"vi","publisher":{"@id":"https://glassboxink.io.vn/#org"}},{"@type":"Organization","@id":"https://glassboxink.io.vn/#org","name":"GlassBox Ink","url":"https://glassboxink.io.vn/","logo":"https://glassboxink.io.vn/media/logo.svg","sameAs":["https://zalo.me/g/bov0yustx6fiwfgeb471","https://github.com/lenhokhoa23/net-phat-hanh"]},{"@type":"SoftwareApplication","@id":"https://glassboxink.io.vn/#app","name":"GlassBox Ink","url":"https://glassboxink.io.vn/","operatingSystem":"Windows 10, Windows 11, macOS","applicationCategory":"EducationalApplication","inLanguage":"vi","description":"GlassBox Ink là phần mềm sổ tay dạy và học Toán trên Windows, macOS: viết tay mượt, vẽ hình không gian, đồ thị hàm số, bảng biến thiên, Oxyz; trợ lý AI, quét đề. Dùng thử 7 ngày.","image":"https://glassboxink.io.vn/media/og.jpg","downloadUrl":"https://glassboxink.io.vn/#tai-ve","publisher":{"@id":"https://glassboxink.io.vn/#org"},"featureList":["Viết tay mượt có lực nhấn","Vẽ hình không gian, hình chóp, thiết diện","Vẽ đồ thị hàm số","Lập bảng biến thiên","Hệ toạ độ Oxyz","Trợ lý AI giải bài, dựng hình, soạn đề","Quét đề bằng AI, quét nhiều ảnh một lúc","Đổi chữ viết tay sang chữ in","Đồng bộ Google Drive","Chấm bài trên trang"]}]}</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -108,7 +110,7 @@
       <h1 data-split>Viết tay như trên giấy.
         <span class="line2"><span class="grad-text">Vẽ hình</span> <span class="hand-word">chuẩn như máy.<svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 20c40-12 80-14 120-8s90 8 172-6"/></svg></span></span>
       </h1>
-      <p class="lead rv-h" style="--d:.35s">Nét bút mượt có lực nhấn. Đồ thị, bảng biến thiên, hình không gian, Oxyz dựng trong vài giây. <b>Trợ lý AI</b> giải bài, dựng hình, soạn đề theo lời bạn; chụp đề vào là AI dựng lại cả chữ lẫn hình.</p>
+      <p class="lead rv-h" style="--d:.35s"><b>GlassBox Ink</b> là phần mềm sổ tay dạy Toán trên Windows và macOS. Nét bút mượt có lực nhấn. Đồ thị, bảng biến thiên, hình không gian, Oxyz dựng trong vài giây. <b>Trợ lý AI</b> giải bài, dựng hình, soạn đề theo lời bạn; chụp đề vào là AI dựng lại cả chữ lẫn hình.</p>
       <div class="cta rv-h" style="--d:.45s">
         <a class="btn" href="#tai-ve" data-dl-primary><svg><use href="#i-down"/></svg><span>Tải cho <span data-os-name>Windows</span><small>Dùng thử 7 ngày, miễn phí</small></span></a>
         <a class="btn ghost" href="#xem-app"><svg><use href="#i-play"/></svg>Xem app chạy</a>
@@ -314,12 +316,12 @@
       <h2 data-split>Gọn gàng, dễ nhìn</h2>
     </div>
     <div class="gallery" id="gallery">
-      <figure class="shot"><div class="window"><img src="media/anh/ai-toan-canh.jpg" alt="Trợ lý AI vẽ đồ thị và đánh dấu cực trị" loading="lazy" width="1366" height="768"></div><figcaption>Trợ lý AI</figcaption></figure>
-      <figure class="shot"><div class="window"><img src="media/anh/05_do_thi_light.jpg" alt="Xưởng Đồ thị" loading="lazy" width="1366" height="768"></div><figcaption>Xưởng Đồ thị</figcaption></figure>
-      <figure class="shot"><div class="window"><img src="media/anh/06_bang_bien_thien_light.jpg" alt="Bảng biến thiên" loading="lazy" width="1366" height="768"></div><figcaption>Bảng biến thiên</figcaption></figure>
-      <figure class="shot"><div class="window"><img src="media/anh/04_dung_hinh_chop_light.jpg" alt="Dựng hình không gian" loading="lazy" width="1366" height="768"></div><figcaption>Dựng hình không gian</figcaption></figure>
-      <figure class="shot"><div class="window"><img src="media/anh/02_quan_sat_light.jpg" alt="Quan sát và tô mặt khối" loading="lazy" width="1366" height="768"></div><figcaption>Quan sát, tô mặt khối</figcaption></figure>
-      <figure class="shot"><div class="window"><img src="media/anh/08_cong_thuc_light.jpg" alt="Soạn công thức" loading="lazy" width="1366" height="768"></div><figcaption>Công thức Toán</figcaption></figure>
+      <figure class="shot"><div class="window"><img src="media/anh/ai-toan-canh.jpg" alt="Trợ lý AI của GlassBox Ink vẽ đồ thị hàm số và đánh dấu cực trị" loading="lazy" width="1366" height="768"></div><figcaption>Trợ lý AI</figcaption></figure>
+      <figure class="shot"><div class="window"><img src="media/anh/05_do_thi_light.jpg" alt="Vẽ đồ thị hàm số trong GlassBox Ink" loading="lazy" width="1366" height="768"></div><figcaption>Xưởng Đồ thị</figcaption></figure>
+      <figure class="shot"><div class="window"><img src="media/anh/06_bang_bien_thien_light.jpg" alt="Lập bảng biến thiên trong GlassBox Ink" loading="lazy" width="1366" height="768"></div><figcaption>Bảng biến thiên</figcaption></figure>
+      <figure class="shot"><div class="window"><img src="media/anh/04_dung_hinh_chop_light.jpg" alt="Vẽ hình chóp, hình không gian trong GlassBox Ink" loading="lazy" width="1366" height="768"></div><figcaption>Dựng hình không gian</figcaption></figure>
+      <figure class="shot"><div class="window"><img src="media/anh/02_quan_sat_light.jpg" alt="Xoay, quan sát và tô mặt khối không gian" loading="lazy" width="1366" height="768"></div><figcaption>Quan sát, tô mặt khối</figcaption></figure>
+      <figure class="shot"><div class="window"><img src="media/anh/08_cong_thuc_light.jpg" alt="Soạn công thức Toán trong GlassBox Ink" loading="lazy" width="1366" height="768"></div><figcaption>Công thức Toán</figcaption></figure>
     </div>
   </div>
 </section>
